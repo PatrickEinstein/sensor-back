@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="myHead"><title>
+	WorldFleetLog - Login
+</title><meta http-equiv="Cache-Control" content="no-cache"/><meta http-equiv="Expires" content="0"/><meta http-equiv="Pragma" content="no-cache"/><link rel="shortcut icon" href="https://www.worldfleet.co.il/WFL/favicon.ico"/><link rel="stylesheet" type="text/css" href="/WFL/resources/css/allmasterltr.min.css?v=r131s4" /><link rel="stylesheet" type="text/css" href="/WFL/resources/js/jquery/jquery-ui/jquery-ui.min.css?v=r131s4" /><link rel="stylesheet" type="text/css" href="/WFL/resources/js/jquery/jquery-ui/jquery-ui-edt.min.css?v=r131s4" /><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script><script type="text/javascript" src="/WFL/resources.min/js/allmpage.min.js?v=r131s4"></script><link rel="stylesheet" type="text/css" href="/WFL/resources/css/loginpage.min.css?v=r131s4" /><script type="text/javascript" src="/WFL/resources.min/js/pages/alllogin.min.js?v=r131s4"></script>
+<script type="text/javascript" src="./GlobalFN.js?v=r131s4"></script>
+<script type="text/javascript">
+    var do_encrypt = 'False';  // True or False from vb.net
+    $(showHidePasswordEvents);
+</script>
+<style type="text/css">
+    /* body class for subfolder RPT*/ 
+    .BODY_CLASS_RPT {
+        background: url(resources/images/Login/bg_fuel_tech.pattern.jpg) center top repeat-x;
+    }
+    .loginBG_DUMMY{}
+    .loginBG {
+        background: url(resources/images/Login/LoginBGIL.jpg) no-repeat center bottom transparent;
+        width: 100%;
+        height: 550px;
+        margin: 0 auto !important;
+        cursor: default;
+    }
+    #imgLoading {
+        width: 18px;
+        height: 18px;
+    }
+    .animated-border {
+      color:blue;
+      font-size:small;
+      border-width:thin;
+      background: linear-gradient(90deg, blue 50%, transparent 50%), 
+                  linear-gradient(90deg, blue 50%, transparent 50%), 
+                  linear-gradient(0deg, blue 50%, transparent 50%), 
+                  linear-gradient(0deg, blue 50%, transparent 50%);
+      background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+      background-size: 15px 1px, 15px 1px, 1px 15px, 1px 15px;
+      background-position: 0px 0px, 100% 100%, 0px 100%, 100% 0px;
+      animation: border-dance 20s infinite linear;
+      padding: 6px;
+      line-height: 18px;
+    }
+
+    @keyframes border-dance {
+      0% {
+        background-position: 0px 0px, 100% 100%, 0px 100%, 100% 0px;
+      }
+      100% {
+        background-position: 100% 0px, 0px 100%, 0px 0px, 100% 100%;
+      }
+    }
+</style>
+</head>
+<body id="myBody" dir="ltr" style="overflow:hidden;">
+    <form method="post" action="./" id="myForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTM4MzM1NzM0Mw9kFgJmD2QWAgIDDxYEHgNkaXIFA2x0ch4Fc3R5bGUFEG92ZXJmbG93OmhpZGRlbjsWAgIBD2QWAgIBD2QWBgIEDxYCHgdWaXNpYmxlZ2QCDw8PFgIeBFRleHQFCHYzLjM0LjA1ZGQCEQ8WAh8CaGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFGmN0bDAwJGNwaE1haW4kY2hrUmVtZWJlck1l3jelv3sAR8N3h46chFOXgcSbaF8KWQQbzUPjfH3UB5E=" />
+
+<script type="text/javascript" src="/WFL/resources.min/js/jsencrypt.min.js?v=r131s4"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C5F35D49" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAp0Uu/3rRGwlr49mj11a8Xb+x7Aq2F8vuiZHiRQsECjtSw6A3JrMFmprEflnPVJvR1O9n9EN3l2n6gJGs/GDSuTBsApuxcP7uKxUVA3HQZ0HXrvqE6Akw2IDUPyYYclpR9EjkePPVx+BEBrDX9lQb+m1TtVgd5MNJkhNAbJz/Y7YsIXnShBStN4IBw3eloW3Lg6IppeRiuc6xGiFOhjZotr1B/lbfHE8k2KoHlR0BEtsbfn0cgS6ciiGAIdNTF1Gno=" />
+    <div>
+        
+    <div class="loginBG">
+        <div class="lgnBox">
+            <div id="divLgnLogo" class="lgnLogo">
+                <a href="http://www.e-drivetech.com" target="_blank"><img src="./resources/images/Login/LoginLogo.png" alt="" width="271" height="154"/></a><br />
+                <div class="lgnTitle"><label class="t1">E-Drive Technology</label><label class="t2">Automotive Telematics,<br />Fleet Management and<br />Fuel Management Systems</label></div>
+            </div>
+            <div class="lgnFormBox">
+                <div class="lgnFormBgT">
+                    <div id="lblLogin" class="xfloatB">Login</div>
+                    <div id="ddlLan" class="xfloatE"></div>
+                </div>
+                <div class="lgnFormBgM optMinLine">
+                    
+                    
+                    
+
+                    
+                    <p id="format-warning-holder" class="animated-border">
+                        <label id="lblNewformatMsg">XXX Enter your credentials using email format: <b>user@company.name</b> while dots (.) may be used instead of spaces.</label>
+                    </p>
+                    
+                </div>
+                <div class="lgnFormBgM">
+                    <table id="lgnFrmTable" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td><label id="lblUser">User</label></td>
+                            <td>
+                                
+                                <input name="ctl00$cphMain$UserNameText" type="text" id="UserNameText" tabindex="2" class="dirLTR" autocomplete="off" placeholder="user@company.name" />
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label id="lblPassword">Password</label></td>
+                            <td>
+                                <div class="password-wrapper">
+                                    <input name="ctl00$cphMain$PasswordText" type="password" id="PasswordText" tabindex="3" class="dirLTR" autocomplete="off" />
+                                    <img src="./Resources/images/eye-show.png" data-field="#PasswordText" class="eye-show" alt="Show password" />
+                                    <img src="./Resources/images/eye-hide.png" data-field="#PasswordText" class="eye-hide" alt="Hide password" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr  style="display:none">
+                            <td><label id="lblCompany">Company</label></td>
+                            <td>
+                                <input name="ctl00$cphMain$X_X_X_CompanyName" type="text" id="X_X_X_CompanyName" tabindex="1" class="dirLTR" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label id="lblAuthCode">Auth. code</label></td>
+                            <td>
+                                <input name="ctl00$cphMain$txtAuthCode" type="text" maxlength="6" id="txtAuthCode" tabindex="4" class="dirLTR" autocomplete="off" placeholder="(optional)" />
+                                <img id="imgHelp1" alt="" title="(optional) Authentication code is required only if told by your administrator" src="./images/BTN_Mark.gif"  style="vertical-align:middle"  />
+                                <img id="imgOptSettings" alt="" title="Click to generate new secret key" src="./resources/images/SecretKey_16x16.png" style="vertical-align:middle"  />
+                                <img id="imgLoading" alt="" title="Click to generate new secret key" src="./resources/images/animated/ajax-loading.gif" style="vertical-align:middle;display: none;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td nowrap><span class="aspNetDisabled"><input id="chkTrustThisDevice" type="checkbox" name="ctl00$cphMain$chkTrustThisDevice" disabled="disabled" tabindex="5" /><label for="chkTrustThisDevice">Trust this device (7 days)</label></span></td>
+                        </tr>
+                    </table>
+                    <br />
+                    <table id="lgnFrmTable2" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td nowrap>
+                                <input id="chkRemeberMe" type="checkbox" name="ctl00$cphMain$chkRemeberMe" tabindex="5" /><label for="chkRemeberMe">Remember me</label>
+                                &nbsp;
+                            </td>
+                            <td style="width:10px">&nbsp;</td>
+                            <td valign="bottom" style="width:20%">
+                                <input type="submit" name="ctl00$cphMain$btnLogon" value="Login" onclick="javascript:try {if (!loginClass.submitForm()){return false;}} catch (e) {return false;};WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cphMain$btnLogon&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="btnLogon" tabindex="6" class="defBtn" />
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+                <div class="lgnFormBgM optMinLine"><span id="lblImportantMsg"></span></div>
+                
+                <div class="lgnFormBgM"><a id="btnForgotPass" href="#" class="defLnk">Forgot your password?</a></div>
+                
+                <div class="lgnFormBgB"><span id="lblVersion" class="xfloatE">v3.34.05</span></div>
+                <div class="lgnFormBgF"></div>
+                <input name="ctl00$cphMain$txtbfp" type="hidden" id="txtbfp" value="?" />
+            </div>
+        </div>
+    </div>
+    
+    <input type="hidden" name="ctl00$cphMain$hdnLanguage" id="hdnLanguage" value="en" />
+    
+    <script language="javascript" type="text/javascript">
+        if (0) { document.body.classList.add('') };
+        document.forms[0].action = window.location.pathname;
+        //v3.28 - rafi: replace fingerprint with a guid key in localStorage
+        var existingTrustKey = window.localStorage.getItem('EDT.WFL.TrustThisDeviceKey');
+        if (existingTrustKey > '') {
+            $('#txtbfp').val(existingTrustKey)
+        } else {
+            var newTrustKey = '8c4069be-f6f1-4509-a0c7-63aa967a73c2';
+            window.localStorage.setItem('EDT.WFL.TrustThisDeviceKey', newTrustKey);
+            $('#txtbfp').val(newTrustKey)
+        }
+    </script>
+
+    </div>
+    </form>
+    <script type="text/javascript">var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-16302298-1']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+</body>
+</html>
