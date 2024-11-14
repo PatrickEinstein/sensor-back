@@ -32,7 +32,7 @@ export class User {
             });
             return {
                 status: 200,
-                message: "Login successful",
+                message: `Welcome ${user.username}`,
                 id: user.id,
                 token,
             };
@@ -45,6 +45,7 @@ export class User {
         }
     }
     async CreateUser(load) {
+        console.log(`CreatingUserLoad-backend`, load);
         try {
             let createduserId = 0;
             try {
@@ -177,7 +178,7 @@ export class User {
     }
     async UpdateRoles(load) {
         try {
-            console.log("service", load);
+            console.log("Update Role  service", load);
             const userRole = AppDataSource.getRepository(roles);
             let foundRole = await userRole.findOne({
                 where: { userid: load.userid },

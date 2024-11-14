@@ -3,7 +3,7 @@ import TemplateController from "../controller/template.js";
 const templateRouter = express.Router();
 /**
  * @openapi
- * /download-template:
+ * /api/download-template:
  *   get:
  *     tags:
  *       - Files
@@ -20,5 +20,5 @@ const templateRouter = express.Router();
  *       500:
  *         description: Internal Server Error.
  */
-templateRouter.get("/download-template", TemplateController);
+templateRouter.get("/api/download-template", TemplateController);
 export default templateRouter;

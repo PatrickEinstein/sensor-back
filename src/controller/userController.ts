@@ -15,6 +15,7 @@ export class UserController {
   };
 
   CreateUser: RequestHandler = async (req, res) => {
+    console.log(`Controller for creating user`, req.body)
     const body = req.body as ICreateUser;
     const response = await this.user.CreateUser(body);
     res.status(200).json(response);
@@ -50,8 +51,8 @@ export class UserController {
   };
 
   updateRoles: RequestHandler = async (req, res) => {
+    console.log('role controller', req.body)
     const body = req.body as IUpdateRole;
-    console.log('controller', body)
     const response = await this.user.UpdateRoles(body);
     res.status(200).json(response);
   };

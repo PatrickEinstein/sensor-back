@@ -30,12 +30,15 @@ const ApiCaller = (io) => {
                 io.to("0").emit("each_sensor", sensor);
             });
         });
-        console.log("Emitted data:", data);
+        // console.log("Emitted data:", data);
         io.to("0").emit("api_data", data);
     }, interval);
 };
 const NotificationJob = (io) => {
     console.log("Notifications service is up");
+    io.on("change_interval", (data) => {
+        console.log("changed-interval", data);
+    });
     ApiCaller(io);
 };
 export default NotificationJob;

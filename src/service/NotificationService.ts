@@ -5,6 +5,7 @@ import { Server } from "socket.io";
 const interval: number = 10000;
 
 const ApiCaller = (io: Server) => {
+
   setInterval(() => {
     // credentials.forEach(async ({ Client, Username, Password, URL }) => {
     //   try {
@@ -39,13 +40,17 @@ const ApiCaller = (io: Server) => {
         io.to("0").emit("each_sensor", sensor);
       });
     });
-    console.log("Emitted data:", data);
+    // console.log("Emitted data:", data);
     io.to("0").emit("api_data", data);
   }, interval);
 };
 
-const NotificationJob = (io:Server) => {
+const NotificationJob = (io: Server) => {
   console.log("Notifications service is up");
+
+  io.on("change_interval", (data) => {
+    console.log("changed-interval", data);
+  });
   ApiCaller(io);
 };
 

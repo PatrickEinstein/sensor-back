@@ -21,8 +21,9 @@ export enum Role {
   SuperAdmin = "superAdmin",
 }
 
-
 export interface IUpdateRole {
   userid: string;
   role: Role;
 }
+
+

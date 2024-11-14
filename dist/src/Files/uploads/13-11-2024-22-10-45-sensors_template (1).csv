@@ -1,0 +1,6 @@
+nameOfClient,sensor,message,room,status,timestamp
+Client1,C3S1,0,0,0,2024-11-13T10:00:00Z
+Client1,C3S1,0,0,0,2024-11-13T10:00:00Z
+Client1,C4S1,0,0,0,2024-11-13T10:00:00Z
+Client2,C4S1,0,0,0,2024-11-13T10:00:00Z
+Client2,C4S1,0,0,0,2024-11-13T10:00:00Z

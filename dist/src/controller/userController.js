@@ -9,6 +9,7 @@ export class UserController {
         res.status(200).json(response);
     };
     CreateUser = async (req, res) => {
+        console.log(`Controller for creating user`, req.body);
         const body = req.body;
         const response = await this.user.CreateUser(body);
         res.status(200).json(response);
@@ -38,8 +39,8 @@ export class UserController {
         res.status(200).json(response);
     };
     updateRoles = async (req, res) => {
+        console.log('role controller', req.body);
         const body = req.body;
-        console.log('controller', body);
         const response = await this.user.UpdateRoles(body);
         res.status(200).json(response);
     };

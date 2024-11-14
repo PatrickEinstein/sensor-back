@@ -53,7 +53,7 @@ export class User implements IUser {
       );
       return {
         status: 200,
-        message: "Login successful",
+        message:`Welcome ${user.username}`,
         id: user.id,
         token,
       };
@@ -66,6 +66,8 @@ export class User implements IUser {
   }
 
   async CreateUser(load: ICreateUser) {
+
+    console.log(`CreatingUserLoad-backend`,load)
     try {
       let createduserId = 0;
       try {
@@ -198,7 +200,7 @@ export class User implements IUser {
 
   async UpdateRoles(load: IUpdateRole) {
     try {
-      console.log("service", load);
+      console.log("Update Role  service", load);
       const userRole = AppDataSource.getRepository(roles);
 
       let foundRole = await userRole.findOne({
